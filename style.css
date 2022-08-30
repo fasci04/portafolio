@@ -446,7 +446,6 @@ label textarea{
 .span__label__textarea{
     margin-top: 12px;
     position: absolute;
-    /*background: red;*/
 }
 
 
@@ -518,12 +517,6 @@ button.disable{
     background: var(--color-formulario);
     border: none;
 }
-
-/*input.formcontato__input{
-    border-radius: 4px;
-    height: 56px;
-      
-}*/
 
 
 /*footeer*/

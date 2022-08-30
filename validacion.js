@@ -8,7 +8,6 @@ const textarea = document.getElementById('mensagem');
 
 inputs.forEach(input => {
   input.onfocus = function () {
-    //input.previousElementSibling.classList.add('top');
     input.previousElementSibling.classList.add('focus');
     input.parentElement.classList.add('focus')
     input.previousElementSibling.classList.remove('top');
@@ -18,28 +17,17 @@ inputs.forEach(input => {
     input.parentElement.querySelector(".input-message-error").innerHTML = ""
   }
   input.onblur = function () {
-    //console.log(input.dataset.tipo)
-    //botonn(pepe)
     if (input.value == "") {
       input.previousElementSibling.classList.remove('focus');
       input.parentElement.classList.remove('focus');
       valida(input);
-      //console.log(pepe);
-
     } else {
-      //console.log(pepe.classList);
       if (valida(input)) {
         input.previousElementSibling.classList.remove('focus');
         input.parentElement.classList.remove('focus');
         input.previousElementSibling.classList.remove('top');
         input.parentElement.classList.remove('top');
-        //input.previousElementSibling.classList.add('error');
-        // input.parentElement.classList.add('error');
-      } /*else {
-        input.previousElementSibling.classList.add('top');
-        input.parentElement.classList.add('top');
-      }*/
-      //console.log(pepe.classList);
+      } 
       botonn(l1,l2,l3,l4)
     }
 
@@ -72,14 +60,9 @@ textarea.onblur = function () {
 
 
 function valida(input) {
-  //console.log(input);
-  // console.log(input.dataset.tipo)
   const tipoDeInput = input.dataset.tipo;
   console.log(tipoDeInput);
-  /*if (validadores[tipoDeInput]) {
-    validadores[tipoDeInput](input);
-  }*/
-
+ 
   if (input.validity.valid) {
     input.previousElementSibling.classList.remove('error');
     input.parentElement.classList.remove('error');
@@ -87,15 +70,11 @@ function valida(input) {
     input.parentElement.classList.add('top');
     input.previousElementSibling.classList.remove('focus');
     input.parentElement.classList.remove('focus');
-
-    /*input.parentElement.classList.remove("input-container--invalid");
-    input.parentElement.querySelector(".input-message-error").innerHTML = "";*/
   } else {
     input.previousElementSibling.classList.remove('focus');
     input.parentElement.classList.remove('focus');
     input.previousElementSibling.classList.add('error');
     input.parentElement.classList.add('error');
-    //input.parentElement.classList.add("input-container--invalid");
     input.parentElement.querySelector(".input-message-error").innerHTML = mostrarMensajeDeError(tipoDeInput, input);
   }
 }
@@ -136,11 +115,6 @@ function mostrarMensajeDeError(tipoDeInput, input) {
 }
 
 function botonn(l1,l2,l3,l4) {
-  /*if (pepe.previousElementSibling.classList.contains('top')) {
-    console.log("ok")
-  } else {
-    console.log("noooooooooooooooooooooooooooooooo")
-  }*/
   if (l1.classList.contains('top') && l2.classList.contains('top') && l3.classList.contains('top') && l4.classList.contains('top')) {
     console.log("siiiiiiiiiiiii");
     boton.classList.remove('disable');
